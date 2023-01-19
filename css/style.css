@@ -2865,7 +2865,9 @@ video {
   background-image: linear-gradient(
     45deg,
     rgb(255, 255, 255),
+    rgb(255, 255, 255),
     rgba(242, 216, 255, 0.6),
+    rgb(255, 255, 255),
     rgb(255, 255, 255)
   );
 }
@@ -2874,12 +2876,18 @@ video {
   font-size: 6em !important;
   text-align: left !important;
   line-height: 1em !important;
+  animation-name: bigTextAnim;
+  animation-duration: 3s;
+  animation-timing-function: ease;
 }
 .littleText {
   padding-top: 2em !important;
   font-size: 1em !important;
   text-align: left !important;
   font-size: 1.5em !important;
+  animation-name: littleTextAnim;
+  animation-duration: 3s;
+  animation-timing-function: ease;
 }
 
 .nav {
@@ -2889,4 +2897,28 @@ video {
   position: fixed !important; /* Сделал его липким/фиксированным */
   top: 0 !important; /* Оставайтесь на вершине */
   width: 100% !important; /* Полная ширина */
+  transition: top 0.3s !important;
+  display: block !important;
 }
+
+.nav.out {
+  transform: translateY(-100%);
+}
+
+@keyframes littleTextAnim {
+  from {
+    color: rgba(0, 0, 0, 0.358);
+  }
+  to {
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* @keyframes bigTextAnim {
+  from {
+    color: rgba(0, 0, 0, 0.592);
+  }
+  to {
+    color: rgb(0, 0, 0);
+  }
+} */
